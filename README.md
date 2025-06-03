@@ -1,8 +1,8 @@
 # Bright Data Web Scraper Plugin for Dify
 
-A comprehensive web scraping and data extraction plugin powered by Bright Data's enterprise-grade infrastructure with intelligent auto-detection. Supports 20+ platforms including Amazon, LinkedIn, Instagram, YouTube, and more.
+A comprehensive web scraping and data extraction plugin powered by Bright Data's enterprise-grade infrastructure with intelligent auto-detection. Supports 50+ platforms including Amazon, LinkedIn, Instagram, YouTube, and more.
 
-![Plugin Demo](https://github.com/idanvilenski/BrightData_Dify_Plugin/blob/main/demo.png)
+![Plugin Demo](https://github.com/idanvilenski/BrightData_Dify_Plugin/assets/demo1.PNG)
 
 ## 🚀 Quick Start
 

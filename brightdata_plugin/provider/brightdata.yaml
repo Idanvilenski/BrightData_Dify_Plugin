@@ -10,7 +10,10 @@ identity:
     zh_Hans: 基于 Bright Data 企业级基础设施的综合网页抓取和数据提取插件。现在具有智能自动检测最佳提取方法的功能。
     pt_BR: Um plugin abrangente de web scraping e extração de dados alimentado pela infraestrutura de nível empresarial da Bright Data. Agora com detecção automática inteligente do melhor método de extração.
   icon: icon.svg
-
+tools:
+  - tools/structured_data_feeds.yaml
+  - tools/scrape_as_markdown.yaml
+  - tools/search_engine.yaml
 credentials_for_provider:
   api_token:
     type: secret-input
@@ -28,12 +31,6 @@ credentials_for_provider:
       zh_Hans: 从 Bright Data 用户设置中获取您的 API 令牌。令牌应以您的区域凭据开头。
       pt_BR: Get your API token from Bright Data user settings. The token should start with your zone credentials.
     url: https://brightdata.com/cp/setting/users
-
-tools:
-  - tools/structured_data_feeds.yaml
-  - tools/scrape_as_markdown.yaml
-  - tools/search_engine.yaml
-
 extra:
   python:
     source: provider/brightdata.py

@@ -1,436 +1,133 @@
-<<<<<<< HEAD
-# 🚀 Bright Data Plugin for Dify
+# Bright Data Web Scraper Plugin for Dify
 
-A comprehensive web scraping and data extraction plugin powered by Bright Data's enterprise-grade infrastructure. This plugin provides advanced web scraping capabilities with anti-bot detection for the Dify platform.
+A comprehensive web scraping and data extraction plugin powered by Bright Data's enterprise-grade infrastructure with intelligent auto-detection. Supports 20+ platforms including Amazon, LinkedIn, Instagram, YouTube, and more.
 
-## ✨ **New! Smart Data Extractor**
+![Plugin Demo](https://github.com/idanvilenski/BrightData_Dify_Plugin/blob/main/demo.png)
 
-Our latest addition automatically determines the best extraction method for your needs:
+## 🚀 Quick Start
 
-- **🧠 Intelligent Auto-Detection**: Just describe what you want or provide any URL
-- **🎯 20+ Data Sources**: Amazon, LinkedIn, Instagram, YouTube, TikTok, Crunchbase, and more!
-- **⚡ One Tool for Everything**: No need to choose between multiple extractors
+### 1. Download the Plugin
+Download the latest plugin package: [`brightdata_plugin.difypkg`](https://github.com/idanvilenski/BrightData_Dify_Plugin/releases/latest/download/brightdata_plugin.difypkg)
 
-## 🔧 **Features**
+### 2. Install in Dify
+1. Go to [Dify.ai](https://dify.ai) → **Plugins** → **Add Plugin**
+2. Choose **Add from Local File**
+3. Upload the `brightdata_plugin.difypkg` file
 
-### **Smart Data Extractor (Recommended)**
-- **E-commerce**: Amazon products/reviews/search, Walmart, eBay, Best Buy
-- **Social Media**: LinkedIn profiles/companies/jobs, Instagram, TikTok, Facebook, X/Twitter
-- **Business Intelligence**: Crunchbase companies, Google Maps reviews, ZoomInfo
-- **Content & Media**: YouTube videos/comments, Reddit posts, GitHub repositories
-- **Real Estate**: Zillow property listings
+### 3. Setup Bright Data Account
+1. Visit [Bright Data](https://brightdata.com/) and create an account
+2. Navigate to your account settings to get your API key
+3. Copy your API token for the next step
 
-### **Classic Tools** 
-- **Web Page Scraping**: Extract content as Markdown or HTML with anti-bot protection
-- **Search Engine Scraping**: Google, Bing, Yandex search results
+### 4. Create Your First Workflow
+1. Go to **Dify Studio** → **Workflow**
+2. Add one of the **Bright Data Web Scraper** tools:
+   - **Structured Data Feeds** - Extract structured data from 20+ platforms
+   - **Scrape As Markdown** - Convert any webpage to clean markdown
+   - **Search Engine** - Get search results from Google, Bing, Yandex
 
-## 🚀 **Quick Start**
+3. Enter your Bright Data API key when prompted
+4. Connect an **LLM node** to process and summarize the scraped data
 
-### **Option 1: Download Pre-built Package (Easiest)**
+## 📋 Available Tools
 
-1. **Download Plugin Package**
-   - Go to [Releases](https://github.com/Idanvilenski/BrightData_Dify_Plugin/releases)
-   - Download the latest `bright-data.difypkg` file
+### 🔍 Structured Data Feeds
+Extract structured data from popular platforms:
+- **E-commerce**: Amazon, eBay, Walmart, Best Buy, Etsy, Zara
+- **Social Media**: Instagram, Facebook, TikTok, YouTube, X (Twitter)
+- **Professional**: LinkedIn profiles, companies, jobs
+- **Business**: Crunchbase, ZoomInfo
+- **Maps & Reviews**: Google Maps, booking sites
+- **News**: Reuters and other news sources
 
-2. **Install in Dify**
-   - Open your Dify dashboard
-   - Go to **Plugins** → **Install from file**
-   - Upload the `bright-data.difypkg` file
-   - Click **Install**
+### 📄 Scrape As Markdown
+Convert any webpage into clean, readable markdown format perfect for:
+- Content analysis
+- Documentation extraction
+- Article processing
 
-3. **Configure API Token**
-   - Click on the installed **Bright Data** plugin
-   - Add your **Bright Data API Token** 
-   - Save configuration
+### 🔎 Search Engine
+Get search results from major search engines:
+- Google
+- Bing
+- Yandex
 
-4. **Start Using!**
-   - Create workflows and use the **Smart Data Extractor**
-   - Or use individual tools like **Web Scraper** and **Search Engine**
+## 💡 Example Workflow
 
-### **Option 2: Development/Debug Mode**
+![Workflow Example](https://github.com/idanvilenski/BrightData_Dify_Plugin/blob/main/workflow-example.png)
 
-Only use this if you want to modify the plugin:
+**Sample Use Case**: Extract Amazon product information and create a summary
+1. **START** → Input: Product URL
+2. **STRUCTURED DATA FEEDS** → Extract product details
+3. **LLM** → Summarize into easy-to-read text
+4. **END** → Output: Clean product summary
 
-1. **Clone Repository**
+## 🛠️ Development
+
+### Building from Source
 ```bash
-git clone https://github.com/Idanvilenski/BrightData_Dify_Plugin.git
-cd BrightData_Dify_Plugin/bright-data
+# Clone the repository
+git clone https://github.com/idanvilenski/BrightData_Dify_Plugin.git
+cd BrightData_Dify_Plugin
+
+# Package the plugin
+dify plugin package ./brightdata_plugin
+
+# Sign the plugin (optional)
+dify signature sign brightdata_plugin.difypkg -p your_key_pair.private.pem
 ```
 
-2. **Set Up Environment**
-```bash
-pip install -r requirements.txt
-```
+### Requirements
+- Python 3.11+
+- Dify Plugin SDK
+- Bright Data API access
 
-3. **Configure Debug Connection**
-```bash
-cp .env.example .env
-# Edit .env with your Dify debug credentials
-```
+## 📦 Installation Options
 
-4. **Run Development Server**
-```bash
-python -m main
-```
+### Option 1: Local Upload (Recommended)
+Download and upload the `.difypkg` file directly
 
-## 🔑 **Getting Bright Data API Token**
+### Option 2: GitHub Integration
+Install directly from GitHub repository URL in Dify
 
-1. Sign up at [Bright Data](https://brightdata.com)
-2. Go to your dashboard → **Zones**
-3. Create a new zone or use existing one
-4. Copy the **API Token**
-5. Use this token when configuring the plugin in Dify
+### Option 3: Dify Marketplace (Coming Soon)
+The plugin will be available in the official Dify Marketplace
 
-## 💡 **Usage Examples**
+## 🔧 Configuration
 
-### **Smart Data Extractor Usage**
+### API Key Setup
+1. Get your API key from [Bright Data Dashboard](https://brightdata.com/cp/setting/users)
+2. The key should start with your zone credentials
+3. Enter the key in any Bright Data tool configuration
 
-The Smart Data Extractor automatically detects what you want to extract:
+### Supported Parameters
+- **URL**: Target website URL
+- **Search Query**: Search terms for search engines
+- **Engine**: Choose search engine (Google/Bing/Yandex)
+- **Response Format**: JSON, Markdown, or Raw data
 
-#### **Example 1: Amazon Product Analysis**
-```
-Request: "Get Amazon product details including price and reviews"
-URL: "https://amazon.com/dp/B08N5WRWNW"
-→ Automatically uses Amazon extractor
-```
+## 🎯 Use Cases
 
-#### **Example 2: LinkedIn Profile Research**
-```
-Request: "Extract LinkedIn professional profile information"
-URL: "https://linkedin.com/in/elonmusk"
-→ Automatically uses LinkedIn extractor
-```
+- **E-commerce Monitoring**: Track product prices and availability
+- **Lead Generation**: Extract business information from LinkedIn
+- **Content Research**: Gather articles and news for analysis
+- **Market Research**: Monitor competitor websites and social media
+- **SEO Analysis**: Track search engine results and rankings
 
-#### **Example 3: Instagram Analytics**
-```
-Request: "Get Instagram profile statistics and engagement"
-URL: "https://instagram.com/instagram"
-→ Automatically uses Instagram extractor
-```
-
-#### **Example 4: Business Intelligence**
-```
-Request: "Find company funding and investment data"
-URL: "https://crunchbase.com/organization/openai"
-→ Automatically uses Crunchbase extractor
-```
-
-### **Workflow Integration**
-
-1. **Create a new Workflow** in Dify
-2. **Add Smart Data Extractor node**
-3. **Configure parameters**:
-   - **Request**: Describe what you want
-   - **URL**: Paste any supported URL
-   - **Additional Parameters**: Leave empty (optional)
-4. **Connect to LLM node** to process the extracted data
-5. **Run and enjoy!**
-
-## 🎯 **Supported Platforms**
-
-| Category | Platforms |
-|----------|-----------|
-| **E-commerce** | Amazon, Walmart, eBay, Best Buy, Home Depot, Zara, Etsy |
-| **Social Media** | LinkedIn, Instagram, TikTok, Facebook, X/Twitter, YouTube, Reddit |
-| **Business Intel** | Crunchbase, ZoomInfo, Google Maps, Yahoo Finance |
-| **Content & Apps** | GitHub, Reuters News, Google Play, Apple App Store |
-| **Real Estate** | Zillow, Google Shopping |
-
-## 🔧 **Configuration Parameters**
-
-### **Smart Data Extractor**
-- **Request** (required): Describe what data you want to extract
-- **URL** (optional): Specific URL to extract from
-- **Additional Parameters** (optional): JSON with extra settings like `{"pages_to_search": "3", "num_of_reviews": "50"}`
-
-### **Web Scraper**
-- **URL** (required): Webpage to scrape
-- **Output format**: Markdown or HTML
-
-### **Search Engine**
-- **Query** (required): Search terms
-- **Engine**: Google (default), Bing, or Yandex
-
-## 🚨 **Troubleshooting**
-
-### **Common Issues**
-
-**"Could not determine appropriate tool"**
-- Be more specific in your request
-- Use full URLs with https://
-- Try: "Get Amazon product info" instead of "get data"
-
-**"API Error 400: Invalid input"**
-- Check that URLs are complete and valid
-- Ensure your BrightData API token is correct
-- Verify you have sufficient credits
-
-**Plugin not connecting**
-- Restart the plugin: `Ctrl+C` then `python -m main`
-- Check your `.env` file has correct debug credentials
-- Refresh Dify and re-add the plugin
-
-### **Debug Mode Issues**
-
-**"Failed to connect to localhost:5003"**
-- Make sure Dify is running with plugin daemon
-- Get fresh debug credentials from Dify
-- Update your `.env` file with new credentials
-
-## 📊 **What's New in v0.1.0**
-
-- ✅ **Smart Data Extractor**: Auto-detects best extraction method
-- ✅ **20+ Data Sources**: Massive expansion from 3 to 20+ platforms
-- ✅ **Intelligent URL Detection**: Automatically selects tools based on URLs
-- ✅ **Natural Language Requests**: Describe what you want in plain English
-- ✅ **Better Error Handling**: Helpful suggestions when things go wrong
-- ✅ **Robust API Integration**: Handles various response formats gracefully
-
-## 🤝 **Contributing**
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Make your changes and test thoroughly
-4. Commit: `git commit -m 'Add amazing feature'`
-5. Push: `git push origin feature/amazing-feature`
-6. Submit a pull request
-
-## 📄 **License**
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 **Support**
+## 🆘 Support
 
-- **Issues**: [GitHub Issues](https://github.com/Idanvilenski/BrightData_Dify_Plugin/issues)
-- **Bright Data Support**: [Bright Data Help Center](https://help.brightdata.com)
-- **Dify Documentation**: [Dify Docs](https://docs.dify.ai)
+- **Issues**: [GitHub Issues](https://github.com/idanvilenski/BrightData_Dify_Plugin/issues)
+- **Bright Data Support**: [Bright Data Help Center](https://help.brightdata.com/)
+- **Dify Documentation**: [Dify Docs](https://docs.dify.ai/)
 
-## 🙏 **Credits**
+## 🏷️ Tags
 
-- **Bright Data**: For providing the enterprise-grade web scraping infrastructure
-- **Dify Team**: For creating an amazing AI workflow platform
-- **Contributors**: Thank you to everyone who helps improve this plugin!
+`web-scraping` `data-extraction` `automation` `api-integration` `dify` `bright-data`
 
 ---
 
-=======
-<<<<<<< HEAD
-# 🚀 Bright Data Plugin for Dify
-
-A comprehensive web scraping and data extraction plugin powered by Bright Data's enterprise-grade infrastructure. This plugin provides advanced web scraping capabilities with anti-bot detection for the Dify platform.
-
-## ✨ **New! Smart Data Extractor**
-
-Our latest addition automatically determines the best extraction method for your needs:
-
-- **🧠 Intelligent Auto-Detection**: Just describe what you want or provide any URL
-- **🎯 20+ Data Sources**: Amazon, LinkedIn, Instagram, YouTube, TikTok, Crunchbase, and more!
-- **⚡ One Tool for Everything**: No need to choose between multiple extractors
-
-## 🔧 **Features**
-
-### **Smart Data Extractor (Recommended)**
-- **E-commerce**: Amazon products/reviews/search, Walmart, eBay, Best Buy
-- **Social Media**: LinkedIn profiles/companies/jobs, Instagram, TikTok, Facebook, X/Twitter
-- **Business Intelligence**: Crunchbase companies, Google Maps reviews, ZoomInfo
-- **Content & Media**: YouTube videos/comments, Reddit posts, GitHub repositories
-- **Real Estate**: Zillow property listings
-
-### **Classic Tools** 
-- **Web Page Scraping**: Extract content as Markdown or HTML with anti-bot protection
-- **Search Engine Scraping**: Google, Bing, Yandex search results
-
-## 🚀 **Quick Start**
-
-### **Option 1: Download Pre-built Package (Easiest)**
-
-1. **Download Plugin Package**
-   - Go to [Releases](https://github.com/Idanvilenski/BrightData_Dify_Plugin/releases)
-   - Download the latest `bright-data.difypkg` file
-
-2. **Install in Dify**
-   - Open your Dify dashboard
-   - Go to **Plugins** → **Install from file**
-   - Upload the `bright-data.difypkg` file
-   - Click **Install**
-
-3. **Configure API Token**
-   - Click on the installed **Bright Data** plugin
-   - Add your **Bright Data API Token** 
-   - Save configuration
-
-4. **Start Using!**
-   - Create workflows and use the **Smart Data Extractor**
-   - Or use individual tools like **Web Scraper** and **Search Engine**
-
-### **Option 2: Development/Debug Mode**
-
-Only use this if you want to modify the plugin:
-
-1. **Clone Repository**
-```bash
-git clone https://github.com/Idanvilenski/BrightData_Dify_Plugin.git
-cd BrightData_Dify_Plugin/bright-data
-```
-
-2. **Set Up Environment**
-```bash
-pip install -r requirements.txt
-```
-
-3. **Configure Debug Connection**
-```bash
-cp .env.example .env
-# Edit .env with your Dify debug credentials
-```
-
-4. **Run Development Server**
-```bash
-python -m main
-```
-
-## 🔑 **Getting Bright Data API Token**
-
-1. Sign up at [Bright Data](https://brightdata.com)
-2. Go to your dashboard → **Zones**
-3. Create a new zone or use existing one
-4. Copy the **API Token**
-5. Use this token when configuring the plugin in Dify
-
-## 💡 **Usage Examples**
-
-### **Smart Data Extractor Usage**
-
-The Smart Data Extractor automatically detects what you want to extract:
-
-#### **Example 1: Amazon Product Analysis**
-```
-Request: "Get Amazon product details including price and reviews"
-URL: "https://amazon.com/dp/B08N5WRWNW"
-→ Automatically uses Amazon extractor
-```
-
-#### **Example 2: LinkedIn Profile Research**
-```
-Request: "Extract LinkedIn professional profile information"
-URL: "https://linkedin.com/in/elonmusk"
-→ Automatically uses LinkedIn extractor
-```
-
-#### **Example 3: Instagram Analytics**
-```
-Request: "Get Instagram profile statistics and engagement"
-URL: "https://instagram.com/instagram"
-→ Automatically uses Instagram extractor
-```
-
-#### **Example 4: Business Intelligence**
-```
-Request: "Find company funding and investment data"
-URL: "https://crunchbase.com/organization/openai"
-→ Automatically uses Crunchbase extractor
-```
-
-### **Workflow Integration**
-
-1. **Create a new Workflow** in Dify
-2. **Add Smart Data Extractor node**
-3. **Configure parameters**:
-   - **Request**: Describe what you want
-   - **URL**: Paste any supported URL
-   - **Additional Parameters**: Leave empty (optional)
-4. **Connect to LLM node** to process the extracted data
-5. **Run and enjoy!**
-
-## 🎯 **Supported Platforms**
-
-| Category | Platforms |
-|----------|-----------|
-| **E-commerce** | Amazon, Walmart, eBay, Best Buy, Home Depot, Zara, Etsy |
-| **Social Media** | LinkedIn, Instagram, TikTok, Facebook, X/Twitter, YouTube, Reddit |
-| **Business Intel** | Crunchbase, ZoomInfo, Google Maps, Yahoo Finance |
-| **Content & Apps** | GitHub, Reuters News, Google Play, Apple App Store |
-| **Real Estate** | Zillow, Google Shopping |
-
-## 🔧 **Configuration Parameters**
-
-### **Smart Data Extractor**
-- **Request** (required): Describe what data you want to extract
-- **URL** (optional): Specific URL to extract from
-- **Additional Parameters** (optional): JSON with extra settings like `{"pages_to_search": "3", "num_of_reviews": "50"}`
-
-### **Web Scraper**
-- **URL** (required): Webpage to scrape
-- **Output format**: Markdown or HTML
-
-### **Search Engine**
-- **Query** (required): Search terms
-- **Engine**: Google (default), Bing, or Yandex
-
-## 🚨 **Troubleshooting**
-
-### **Common Issues**
-
-**"Could not determine appropriate tool"**
-- Be more specific in your request
-- Use full URLs with https://
-- Try: "Get Amazon product info" instead of "get data"
-
-**"API Error 400: Invalid input"**
-- Check that URLs are complete and valid
-- Ensure your BrightData API token is correct
-- Verify you have sufficient credits
-
-**Plugin not connecting**
-- Restart the plugin: `Ctrl+C` then `python -m main`
-- Check your `.env` file has correct debug credentials
-- Refresh Dify and re-add the plugin
-
-### **Debug Mode Issues**
-
-**"Failed to connect to localhost:5003"**
-- Make sure Dify is running with plugin daemon
-- Get fresh debug credentials from Dify
-- Update your `.env` file with new credentials
-
-## 📊 **What's New in v0.1.0**
-
-- ✅ **Smart Data Extractor**: Auto-detects best extraction method
-- ✅ **20+ Data Sources**: Massive expansion from 3 to 20+ platforms
-- ✅ **Intelligent URL Detection**: Automatically selects tools based on URLs
-- ✅ **Natural Language Requests**: Describe what you want in plain English
-- ✅ **Better Error Handling**: Helpful suggestions when things go wrong
-- ✅ **Robust API Integration**: Handles various response formats gracefully
-
-## 🤝 **Contributing**
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Make your changes and test thoroughly
-4. Commit: `git commit -m 'Add amazing feature'`
-5. Push: `git push origin feature/amazing-feature`
-6. Submit a pull request
-
-## 📄 **License**
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🆘 **Support**
-
-- **Issues**: [GitHub Issues](https://github.com/Idanvilenski/BrightData_Dify_Plugin/issues)
-- **Bright Data Support**: [Bright Data Help Center](https://help.brightdata.com)
-- **Dify Documentation**: [Dify Docs](https://docs.dify.ai)
-
-## 🙏 **Credits**
-
-- **Bright Data**: For providing the enterprise-grade web scraping infrastructure
-- **Dify Team**: For creating an amazing AI workflow platform
-- **Contributors**: Thank you to everyone who helps improve this plugin!
-
----
-
-=======
-# BrightData_Dify_Plugin
-A BrightData plugin for the Dify platform, the plugin contains all of Bright's web scraping, unlocking and dataset tools
->>>>>>> c79671e0e242770add67da64e39647731b1ebdd5
->>>>>>> 3fcdbbf934150efbd3a2a0c0432ed5680181d5a2
+**⭐ If this plugin helps you, please star the repository!**

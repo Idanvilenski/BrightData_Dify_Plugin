@@ -1,5 +1,4 @@
 from dify_plugin import Plugin, DifyPluginEnv
-from provider.brightdata import BrightdataProvider
 
 plugin = Plugin(DifyPluginEnv(MAX_REQUEST_TIMEOUT=120))
 

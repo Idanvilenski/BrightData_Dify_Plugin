@@ -2,7 +2,7 @@
 
 A comprehensive web scraping and data extraction plugin powered by Bright Data's enterprise-grade infrastructure with intelligent auto-detection. Supports 50+ platforms including Amazon, LinkedIn, Instagram, YouTube, and more.
 
-![image](https://github.com/user-attachments/assets/b6948346-4f70-4087-85f1-6aa1ab09e7de)
+![image](https://github.com/user-attachments/assets/5825d274-d47b-4fed-950f-65e6b7c63e58)
 
 ## 🚀 Quick Start
 
@@ -53,9 +53,7 @@ Get search results from major search engines:
 - Yandex
 
 ## 💡 Example Workflow
-
-![Workflow Example](https://github.com/idanvilenski/BrightData_Dify_Plugin/blob/main/workflow-example.png)
-
+(see workflow in banner image)
 **Sample Use Case**: Extract Amazon product information and create a summary
 1. **START** → Input: Product URL
 2. **STRUCTURED DATA FEEDS** → Extract product details

@@ -59,6 +59,9 @@ Get search results from major search engines:
 2. **STRUCTURED DATA FEEDS** → Extract product details
 3. **LLM** → Summarize into easy-to-read text
 4. **END** → Output: Clean product summary
+Important tips;
+- Referance every stage of the workflow to the output of the previos stage
+- Set a high charecter limit in input fields (for the URL input field choose the "short paragraph" var option)
 
 ## 🛠️ Development
 
